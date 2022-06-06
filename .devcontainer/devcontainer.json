@@ -1,5 +1,5 @@
 {
-    "name": "Launchpad",
+    "name": "Lotus Playground",
     "build": {
         "dockerfile": "Dockerfile"
     },

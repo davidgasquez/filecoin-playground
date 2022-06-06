@@ -26,6 +26,8 @@ RUN export CGO_ENABLED=1 && make lotus
 
 FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04
 
+ENV LOTUS_PATH=/workspace/lotus/.lotus
+
 # Install Lotus
 COPY --from=builder /tmp/lotus/lotus /usr/bin/lotus
 COPY --from=builder /etc/ssl/certs                           /etc/ssl/certs
