@@ -1,0 +1,19 @@
+{
+    "name": "Launchpad",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "settings": {},
+    "extensions": [
+        "seatonjiang.gitmoji-vscode",
+        "bungcip.better-toml"
+    ],
+    "remoteUser": "vscode",
+    "features": {
+        "docker-in-docker": "latest",
+        "git": "latest",
+        "golang": "latest",
+        "aws": "latest",
+        "rust": "latest"
+    }
+}
