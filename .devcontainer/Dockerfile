@@ -39,6 +39,4 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libnuma.so* /lib/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libOpenCL.so* /lib/
 
 RUN mkdir -p /workspaces/lotus-playground/.lotus
-RUN sudo chown -R vscode /workspaces/lotus-playground
-
 ENV LOTUS_PATH=/workspaces/lotus-playground/.lotus
