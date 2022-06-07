@@ -26,8 +26,6 @@ RUN export CGO_ENABLED=1 && make lotus
 
 FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04
 
-ENV LOTUS_PATH=/workspace/lotus/.lotus
-
 # Install Lotus
 COPY --from=builder /tmp/lotus/lotus /usr/bin/lotus
 COPY --from=builder /etc/ssl/certs                           /etc/ssl/certs
@@ -39,3 +37,8 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libhwloc.so* /lib/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libltdl.so* /lib/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libnuma.so* /lib/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libOpenCL.so* /lib/
+
+RUN mkdir -p /workspaces/lotus-playground/.lotus
+RUN sudo chown -R vscode /workspaces/lotus-playground
+
+ENV LOTUS_PATH=/workspaces/lotus-playground/.lotus
