@@ -9,5 +9,5 @@ Open this repository on Visual Studio Code with the devcontainers extension inst
 Run lite node:
 
 ```bash
-$ FULLNODE_API_INFO=wss://api.chain.love lotus daemon --lite
+$ lotus daemon --lite
 ```
