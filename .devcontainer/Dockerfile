@@ -18,7 +18,7 @@ RUN wget "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rust
     cargo --version; \
     rustc --version;
 
-RUN git clone https://github.com/filecoin-project/lotus /tmp/lotus
+RUN git clone --branch v1.17.0 https://github.com/filecoin-project/lotus /tmp/lotus
 
 WORKDIR /tmp/lotus
 
@@ -40,3 +40,4 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libOpenCL.so* /lib/
 
 RUN mkdir -p /workspaces/lotus-playground/.lotus
 ENV LOTUS_PATH=/workspaces/lotus-playground/.lotus
+ENV FULLNODE_API_INFO=https://api.node.glif.io
