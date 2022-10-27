@@ -40,5 +40,3 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libOpenCL.so* /lib/
 
 RUN mkdir -p /workspaces/lotus-playground/.lotus
 ENV LOTUS_PATH=/workspaces/lotus-playground/.lotus
-
-ENV FULLNODE_API_INFO=https://api.node.glif.io

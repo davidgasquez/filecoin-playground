@@ -1,3 +1,5 @@
+export FULLNODE_API_INFO := /dns/api.chain.love/wss
+
 lite-node:
 	lotus daemon --lite
 
