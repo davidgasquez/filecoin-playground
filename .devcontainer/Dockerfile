@@ -18,7 +18,7 @@ RUN wget "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rust
     cargo --version; \
     rustc --version;
 
-RUN git clone --branch v1.17.0 https://github.com/filecoin-project/lotus /tmp/lotus
+RUN git clone --branch v1.19.0 https://github.com/filecoin-project/lotus /tmp/lotus
 
 WORKDIR /tmp/lotus
 
@@ -37,6 +37,10 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libhwloc.so* /lib/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libltdl.so* /lib/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libnuma.so* /lib/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libOpenCL.so* /lib/
+
+# Install aria2 and zstd and make
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends aria2 zstd make
 
 RUN mkdir -p /workspaces/lotus-playground/.lotus
 ENV LOTUS_PATH=/workspaces/lotus-playground/.lotus
