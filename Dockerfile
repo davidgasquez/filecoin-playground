@@ -1,6 +1,8 @@
-FROM golang:1.18 AS builder
+FROM golang:1.19.7 AS builder
 
-RUN apt-get update && apt-get install -y ca-certificates build-essential clang ocl-icd-opencl-dev ocl-icd-libopencl1 jq libhwloc-dev
+RUN apt-get update && \
+    apt-get install -y \
+    ca-certificates build-essential clang ocl-icd-opencl-dev ocl-icd-libopencl1 jq libhwloc-dev
 
 ARG RUST_VERSION=nightly
 ENV XDG_CACHE_HOME="/tmp"

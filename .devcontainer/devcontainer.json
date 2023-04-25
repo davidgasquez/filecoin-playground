@@ -3,9 +3,11 @@
     "build": {
         "dockerfile": "../Dockerfile"
     },
-    "settings": {},
-    "extensions": [
-        "bungcip.better-toml"
-    ],
-    "remoteUser": "vscode"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bungcip.better-toml"
+            ]
+        }
+    }
 }
