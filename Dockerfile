@@ -43,6 +43,3 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libOpenCL.so* /lib/
 # Install aria2, zstd and make
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends aria2 zstd make
-
-RUN mkdir -p /workspaces/filecoin-playground/.lotus
-ENV LOTUS_PATH=/workspaces/filecoin-playground/.lotus
