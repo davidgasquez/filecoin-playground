@@ -1,4 +1,4 @@
-FROM golang:1.19.7 AS builder
+FROM golang:1.20.7 AS builder
 
 RUN apt-get update && \
     apt-get install -y \
